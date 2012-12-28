@@ -1,0 +1,17 @@
+!!! 5
+html(lang='en')
+  head
+    title #{title}
+    link(rel='stylesheet', href='style.css')
+    - each s in scripts
+        script(src = s)
+  bodys    
+    #header
+     | header
+    hr   
+      
+    .container
+      block content
+     
+    
+    
