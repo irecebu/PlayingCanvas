@@ -4,15 +4,15 @@ var Circle = function(x, y, radius, color){
 	this.radius = radius || 10;
 	this.color = color || 'orange';
 };
-Circle.prototype.drawCircle = function (border) {
+Circle.prototype.drawCircle = function (fill) {
 	context.beginPath();
 	context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, false);
-	context.fillStyle = this.color;
-	context.fill();
-	if (border) {
+	if (fill) {
+		context.fillStyle = this.color;	
+		context.fill();
 		context.lineWidth = 2;
-		context.stroke();
 	}
+	context.stroke();
 };
 Circle.prototype.hitTheWall = function () {
 	if (this.x + this.radius > width || this.x - this.radius < 0) return true;

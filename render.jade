@@ -1,0 +1,13 @@
+extend layout
+
+block content
+	p
+		| you are inside renderer
+		
+	form(action='render', method='post')
+		| Enter the json
+		br
+		textArea(name='json')
+		input(type='submit', placeholder='Submit')
+		
+	#resultDOM
